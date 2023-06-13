@@ -42,7 +42,6 @@ namespace Tests
             var output = AttributeFirstJsonTransformer.Transform(input);
 
             Assert.AreEqual(excepted, new StreamReader(output).ReadToEnd());
-            //Assert.IsTrue(consoleOutput.ToString().Contains(actual));
         }
 
         [Test]
@@ -68,28 +67,6 @@ namespace Tests
              Assert.AreEqual("options",((JProperty)jsonObject.Last().Last().Last()).Name);
         }
 
-        [Test]
-        public void TestSimpleJsonFieldtoFail()
-        {
-            var simpleJson = @"{      
-                 ""q1"": {
-                     ""question"": ""5 + 7 = ?"",
-                     ""options"": [
-                     ""10"",
-                     ""11"",
-                     ""12"",
-                     ""13""
-                         ],
-                     ""answer"": ""12""                 
-             },
-             ""Age"": 35}";
-            var jobject = JToken.Parse(simpleJson);
-            var firstObject = jobject.First();
-
-            bool isComplexFiled = AttributeFirstJsonTransformer.IsComplexType(firstObject as JProperty);
-
-            Assert.AreNotEqual(isComplexFiled, true);
-
-        }
+      
     }
 }
