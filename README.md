@@ -1,6 +1,6 @@
 # JsonParser
 
-Firstly, I try to parse json to jtype to decide isjobject or jarray.if jobject take properties and set to properties.
+Firstly, I try to parse json to jtype to decide is jobject or jarray.if it's jobject take properties and set to properties.
 Then, The comparison logic ensures that primitive properties come before non-primitive properties, and properties are sorted alphabetically by name.
 It removes all existing child properties from the object.
 It then adds the properties back to the object in the reordered sequence.
