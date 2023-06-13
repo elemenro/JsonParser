@@ -8,7 +8,7 @@ namespace JsonParser.Parser
 {
     public static class AttributeFirstJsonTransformer
     {
-        //nie stream string?
+        
         public static Stream Transform(Stream source)
         {
             var text = new StreamReader(source).ReadToEnd();
